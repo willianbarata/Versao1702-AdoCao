@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="AdoCao.Pages.DescricaoFeedCaoPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <xct:ByteArrayToImageSourceConverter x:Key="ByteArrayToImageSourceConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <StackLayout VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" >
+
+
+            <StackLayout>
+                <Image Source="{Binding ImagemDog, Converter={StaticResource ByteArrayToImageSourceConverter}}"
+                                       HeightRequest="200"
+                                       WidthRequest="200"
+                                          ></Image>
+            </StackLayout>
+
+            <Label Text="{Binding Nome}" />
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Nome: " />
+            <Label x:Name="txtNome" Text="{Binding NomeDog}" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Sexo:" />
+            <Label x:Name="txtSexo" Text="{Binding SexoDog}" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Raça:" />
+            <Label x:Name="txtRaca" Text="{Binding RacaDog}" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Descrição:" />
+            <Label x:Name="txtDescricaoDog" Text="{Binding DescricaoDog}" />
+        </StackLayout>
+    </StackLayout>
+
+
+
+</ContentPage>

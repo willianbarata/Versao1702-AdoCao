@@ -49,9 +49,16 @@ namespace AdoCao.Pages
                 await DisplayAlert("Atenção", "Senhas divergentes", "Fechar");
                 return;
             }
+            Usuario usu = await _usuarioFirebaseService.ObtemUsuarioCPFEmail(_usuario.CPF, _usuario.Email);
 
-            //Salva o registro no B.D
-            var cadastro = await App.BancoDados.UsuarioDataTable.SalvaUsuario(_usuario);
+            if (usu != null)
+            {
+                await DisplayAlert("Atenção", "Usuário já cadastrado!", "Fechar");
+                return;
+            }
+
+                //Salva o registro no B.D
+                var cadastro = await App.BancoDados.UsuarioDataTable.SalvaUsuario(_usuario);
 
             //Usuario cadastrado volta para a pagina de login
             if (cadastro > 0)

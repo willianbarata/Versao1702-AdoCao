@@ -81,6 +81,14 @@ namespace AdoCao.Pages
                 await DisplayAlert("Atenção", "Não foi possivel exibir a foto", "Fechar");
                 return;
             }
+
+
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+           
         }
 
         private async void PegarFoto_Clicked(object sender, EventArgs e)

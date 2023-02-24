@@ -13,8 +13,7 @@
         <StackLayout>
 
             <ListView 
-                IsPullToRefreshEnabled="true"
-                Refreshing="PetsListViewDono_Refreshing"
+               
                 x:Name="PetsListViewDono"
                   Margin="0,50,0,0"
                 ItemSelected="PetsListViewDono_ItemSelected">
