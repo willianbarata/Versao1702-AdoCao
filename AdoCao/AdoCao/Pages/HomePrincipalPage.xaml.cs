@@ -13,7 +13,7 @@ namespace AdoCao.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class HomePrincipalPage : TabbedPage
     {
-        public HomePrincipalPage()
+        public HomePrincipalPage(Usuario usuario)
         {
             InitializeComponent();
 
@@ -29,7 +29,7 @@ namespace AdoCao.Pages
                 IconImageSource = ""
             };
 
-            var pagina3 = new PerfilUsuarioPage(Usuario)
+            var pagina3 = new PerfilUsuarioPage(usuario)
             {
                 Title = "Meu Perfil",
                 IconImageSource = ""

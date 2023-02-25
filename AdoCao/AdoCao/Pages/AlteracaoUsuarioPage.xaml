@@ -1,23 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AdoCao.Pages.EditaUsuarioPage">
+             x:Class="AdoCao.Pages.AlteracaoUsuarioPage">
     <ContentPage.Content>
         <ScrollView>
         <StackLayout VerticalOptions="Fill"
                      Margin="16"
                      Padding="16">
-            <Label x:Name="lblTitulo" 
-                   Text="Cadastre-se" 
-                   FontSize="100"
+                <Label x:Name="lblTitulo" 
+                   Text="Altere seu cadastro" 
+                   FontSize="65"
                    FontAttributes="Italic"
                    HorizontalOptions="Center"/>
-            <Label x:Name="lblCPF" Text="CPF" />
-            <Entry x:Name="txtCPF" Text="{Binding CPF}" Placeholder="Informe seu CPF"/>
             <Label x:Name="lblNome" Text="Nome" />
             <Entry x:Name="txtNome" Text="{Binding Nome}" Placeholder="Informe seu nome" />
-            <Label x:Name="lblEmail" Text="E-mail" />
-            <Entry x:Name="txtEmail" Text="{Binding Email}" Placeholder="seu@email.com.br"/>
             <Label x:Name="lblSenha" Text="Senha"/>
             <Entry x:Name="txtSenha" Text="{Binding Senha}" Placeholder="********" IsPassword="True" />
             <Label x:Name="lblConfirmaSenha" Text="Confirmar Senha" />

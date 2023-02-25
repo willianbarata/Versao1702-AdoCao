@@ -68,12 +68,38 @@ namespace AdoCao.Services
             return usuario;
         }
 
-        public async Task<Usuario> ObtemUsuarioCPFEmail(string cpf, string email )
+        public async Task<Usuario> ObtemUsuarioCPFEmail(string cpf, string email)
         {
             var usuarios = await Lista();
             var usuario = usuarios.FirstOrDefault(e => e.CPF == cpf || e.Email == email);
             return usuario;
         }
 
+        public async void AlteraUsuarioId(Guid idU, string NameU, string email , string senha, string csenha, string numeroU, string complementoU, string bairro, string cpf, string cidadeU, byte[] imagemU, string ruaU)
+        {
+            var usuarioAltera = (await _firebaseClient
+              .Child("Usuario")
+              .OnceAsync<Usuario>()).Where(a => a.Object.Id == idU).FirstOrDefault();
+
+            await _firebaseClient
+              .Child("Usuario")
+              .Child(usuarioAltera.Key)
+              .PutAsync(new Usuario()
+              {
+                  Id = idU,
+                  Nome = NameU,
+                  Email = email,
+                  Senha = senha,
+                  Confirmasenha = csenha,
+                  Bairro = bairro,
+                  Complemento = complementoU,
+                  CPF = cpf,
+                  Cidade = cidadeU,
+                  Rua = ruaU,
+                  Imagem = imagemU,
+                  Numero= numeroU,
+              });
+
+        }
     }
 }

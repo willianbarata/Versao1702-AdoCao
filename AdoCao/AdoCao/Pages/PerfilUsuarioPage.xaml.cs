@@ -104,5 +104,16 @@ namespace AdoCao.Pages
             base.OnAppearing();
 
         }
+
+        private async void btnEditarUsuario_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AlteracaoUsuarioPage(_usuario)); 
+        }
+
+        private async void btnLogout_Clicked(object sender, EventArgs e)
+        {
+            App.Usuario = null;
+            await Navigation.PopToRootAsync();
+        }
     }
 }
